@@ -1,3 +1,5 @@
+import 'package:damoim/screen/avatar_widget.dart';
+import 'package:damoim/screen/post_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -7,8 +9,11 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
+  late TabController _tabController;
+
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
@@ -23,6 +28,20 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+    _tabController.addListener(
+        () => setState(() => _selectedIndex = _tabController.index));
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -51,8 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               // _TopPart(),
               _SearchPart(),
-              _CategoryPart(),
-              _BodyPart(),
+              // _CategoryPart(),
+              // _BodyPart(),
+              _MiddlePart(),
               // _BottomPart(),
             ],
           ),
@@ -213,4 +233,40 @@ class _BottomPart extends StatelessWidget {
       ),
     );
   }
+}
+
+class _MiddlePart extends StatelessWidget {
+  const _MiddlePart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView(
+        //padding 옆
+        padding: const EdgeInsets.all(50),
+        //_categoryList = 카테고리 목록
+        //_postList = 게시글 목록
+        children: [_categoryList(), const SizedBox(height: 15), _postList()],
+      ),
+    );
+  }
+}
+
+Widget _categoryList() {
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+      children: List.generate(
+        20,
+        (index) => AvatarWidget(type: AvatarType.TYPE3),
+      ),
+    ),
+  );
+}
+
+Widget _postList() {
+  //컨텐츠 부분
+  return Column(
+    children: List.generate(50, (index) => PostWidget()).toList(),
+  );
 }
