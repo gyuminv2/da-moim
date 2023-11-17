@@ -9,18 +9,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'favorite',
-      home: Favorite(),
+      home: FavoriteScreen(),
     );
   }
 }
 
-class Favorite extends StatefulWidget {
-  const Favorite({Key? key}) : super(key: key);
+class FavoriteScreen extends StatefulWidget {
+  const FavoriteScreen({Key? key}) : super(key: key);
   @override
-  State<Favorite> createState() => _FavoriteState();
+  State<FavoriteScreen> createState() => _FavoriteScreenState();
 }
 
-class _FavoriteState extends State<Favorite> {
+class _FavoriteScreenState extends State<FavoriteScreen> {
   final _valueList = ['인기순', '추천순', '가장 최근'];
   var selected = '인기순';
   TextEditingController controller = TextEditingController();

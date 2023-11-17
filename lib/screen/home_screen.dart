@@ -1,13 +1,12 @@
-import 'package:damoim/screen/Favorite_Screen.dart';
 import 'package:damoim/screen/IT_view.dart';
 import 'package:damoim/screen/art_view.dart';
 import 'package:damoim/screen/avatar_widget.dart';
 import 'package:damoim/screen/design_view.dart';
 import 'package:damoim/screen/music_view.dart';
+import 'package:damoim/screen/favorite_screen.dart';
 import 'package:damoim/screen/post_widget.dart';
 import 'package:damoim/screen/study_view.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    // FavoriteScreen(),
+    FavoriteScreen(),
     // MessageScreen(),
     // ProfileScreen(),
   ];
@@ -34,6 +33,31 @@ class _HomeScreenState extends State<HomeScreen>
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+
+      if (_selectedIndex == 1) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FavoriteScreen(),
+          ),
+        );
+      }
+      if (_selectedIndex == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FavoriteScreen(),
+          ),
+        );
+      }
+      if (_selectedIndex == 3) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FavoriteScreen(),
+          ),
+        );
+      }
     });
   }
 
@@ -53,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    final result;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF265AA5),

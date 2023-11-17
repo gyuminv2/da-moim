@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:damoim/screen/Favorite_Screen.dart';
+import 'package:damoim/screen/favorite_screen.dart';
 
 enum AvatarType { TYPE1, TYPE2, TYPE3, TYPE4, TYPE5, TYPE6, TYPE7 }
 
