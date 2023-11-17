@@ -8,19 +8,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'favorite',
-      home: Favorite(),
+      title: 'Art',
+      home: Art(),
     );
   }
 }
 
-class Favorite extends StatefulWidget {
-  const Favorite({Key? key}) : super(key: key);
+class Art extends StatefulWidget {
+  const Art({Key? key}) : super(key: key);
   @override
-  State<Favorite> createState() => _FavoriteState();
+  State<Art> createState() => _ArtState();
 }
 
-class _FavoriteState extends State<Favorite> {
+class _ArtState extends State<Art> {
   final _valueList = ['인기순', '추천순', '가장 최근'];
   var selected = '인기순';
   TextEditingController controller = TextEditingController();
@@ -31,7 +31,7 @@ class _FavoriteState extends State<Favorite> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '좋아요',
+          '예술',
           style: TextStyle(color: Color(0xFF265AA5)),
         ),
         elevation: 0.0,

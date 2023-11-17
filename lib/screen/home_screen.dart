@@ -1,6 +1,13 @@
+import 'package:damoim/screen/Favorite_Screen.dart';
+import 'package:damoim/screen/IT_view.dart';
+import 'package:damoim/screen/art_view.dart';
 import 'package:damoim/screen/avatar_widget.dart';
+import 'package:damoim/screen/design_view.dart';
+import 'package:damoim/screen/music_view.dart';
 import 'package:damoim/screen/post_widget.dart';
+import 'package:damoim/screen/study_view.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -243,23 +250,74 @@ class _MiddlePart extends StatelessWidget {
     return Expanded(
       child: ListView(
         //padding 옆
-        padding: const EdgeInsets.all(50),
+        padding: const EdgeInsets.all(20),
         //_categoryList = 카테고리 목록
         //_postList = 게시글 목록
-        children: [_categoryList(), const SizedBox(height: 15), _postList()],
+        children: [_categoryList(context), const SizedBox(height: 15), _postList()],
       ),
     );
   }
 }
 
-Widget _categoryList() {
+Widget _categoryList(BuildContext context) {
+  List<AvatarType> avatarTypes = [
+    AvatarType.TYPE3,
+    AvatarType.TYPE4,
+    AvatarType.TYPE5,
+    AvatarType.TYPE6,
+    AvatarType.TYPE7,
+  ];
+
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal,
     child: Row(
-      children: List.generate(
-        20,
-        (index) => AvatarWidget(type: AvatarType.TYPE3),
-      ),
+      children: [
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => IT(),
+            ),
+          ),
+          child: AvatarWidget(type: avatarTypes[0]),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => Design(),
+            ),
+          ),
+          child: AvatarWidget(type: avatarTypes[1]),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => Music(),
+            ),
+          ),
+          child: AvatarWidget(type: avatarTypes[2]),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => Art(),
+            ),
+          ),
+          child: AvatarWidget(type: avatarTypes[3]),
+        ),
+        GestureDetector(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => Study(),
+            ),
+          ),
+          child: AvatarWidget(type: avatarTypes[4]),
+        ),
+      ],
     ),
   );
 }
@@ -267,6 +325,6 @@ Widget _categoryList() {
 Widget _postList() {
   //컨텐츠 부분
   return Column(
-    children: List.generate(50, (index) => PostWidget()).toList(),
+    children: List.generate(5, (index) => PostWidget()).toList(),
   );
 }
