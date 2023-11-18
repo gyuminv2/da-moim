@@ -1,13 +1,23 @@
+import 'package:damoim/database/drift_database.dart';
+import 'package:damoim/model/board.dart';
 import 'package:damoim/screen/favorite_screen.dart';
 import 'package:damoim/screen/home_screen.dart';
-import'package:damoim/screen/profile_screen.dart';
+import 'package:damoim/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:damoim/database/drift_database.dart';
+
+final GlobalKey<FormState> formkey = GlobalKey();
+String? postCategory = "";
+String? postTitle = "";
+String? postContent = "";
 
 class WriteScreen extends StatefulWidget {
   const WriteScreen({super.key});
   @override
   State<WriteScreen> createState() => _WriteScreenState();
 }
+
 class _WriteScreenState extends State<WriteScreen>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 3;
@@ -61,11 +71,13 @@ class _WriteScreenState extends State<WriteScreen>
     _tabController.addListener(
         () => setState(() => _selectedIndex = _tabController.index));
   }
+
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +86,18 @@ class _WriteScreenState extends State<WriteScreen>
         child: AppBar(
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (formkey.currentState == null) {
+                  return;
+                }
+                if (formkey.currentState!.validate()) {
+                  print('에러가 없따');
+                  print(postCategory);
+                  print(postCategory.runtimeType);
+                } else {
+                  print('에러가 이따');
+                }
+              },
               icon: Icon(Icons.check),
             ),
           ],
@@ -85,20 +108,27 @@ class _WriteScreenState extends State<WriteScreen>
         ),
       ),
       body: SingleChildScrollView(
-      child: SafeArea(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _RealBodyPart(),
-            ],
+        child: SafeArea(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                FutureBuilder<List<Board>>(
+                  future: GetIt.I<LocalDatabase>().getAllBoards(),
+                  builder: (context, snapshot) {
+                    print(snapshot.data);
+                    return Text('hi');
+                  },
+                ),
+                _RealBodyPart(),
+              ],
+            ),
           ),
         ),
       )
       ),
-
-        bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -126,7 +156,6 @@ class _WriteScreenState extends State<WriteScreen>
   }
 }
 
-
 class _RealBodyPart extends StatefulWidget {
   const _RealBodyPart({super.key});
 
@@ -135,89 +164,110 @@ class _RealBodyPart extends StatefulWidget {
 }
 
 class _RealBodyPartState extends State<_RealBodyPart> {
-
   TextEditingController categoryController = TextEditingController();
   TextEditingController titleController = TextEditingController();
   TextEditingController contentController = TextEditingController();
-
-  String postCategory ="";
-  String postTitle ="";
-  String postContent ="";
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
 
-    return Padding(
-
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Category',
-            style: textTheme.bodyText1,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: formkey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Category',
+                style: textTheme.bodyText1,
+              ),
+              TextFormField(
+                onSaved: (String? val) {},
+                validator: (String? val) {
+                  if (val == null || val.isEmpty) {
+                    return '값을 입력해주세요';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  border: UnderlineInputBorder(),
+                  hintText: 'Category를 입력해주세요.',
+                ),
+                controller: categoryController,
+                onChanged: (value) {
+                  setState(() {
+                    postCategory = value;
+                  });
+                },
+              ),
+              SizedBox(height: 30),
+              Text(
+                'title',
+                style: textTheme.bodyText1,
+              ),
+              TextFormField(
+                onSaved: (String? val) {},
+                validator: (String? val) {
+                  if (val == null || val.isEmpty) {
+                    return '값을 입력해주세요';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  border: UnderlineInputBorder(),
+                  hintText: 'title를 입력해주세요.',
+                ),
+                controller: titleController,
+                onChanged: (value) {
+                  setState(() {
+                    postTitle = value;
+                  });
+                },
+              ),
+              SizedBox(height: 30),
+              Text(
+                'content',
+                style: textTheme.bodyText1,
+              ),
+              TextFormField(
+                validator: (String? val) {
+                  if (val == null || val.isEmpty) {
+                    return '값을 입력해주세요';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 80.0),
+                  border: OutlineInputBorder(),
+                  hintText: '   content를 입력해주세요.',
+                ),
+                controller: contentController,
+                onChanged: (value) {
+                  setState(() {
+                    postContent = value;
+                  });
+                },
+              ),
+              SizedBox(height: 40),
+              Text(
+                'picture',
+                style: textTheme.bodyText1,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.add_a_photo),
+              ),
+            ],
           ),
-          TextField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              hintText: 'Category를 입력해주세요.',
-            ),
-            controller: categoryController,
-            onChanged: (value){
-              setState(() {
-                postCategory = value;
-              });
-            },
-          ),
-          SizedBox(height: 30),
-          Text(
-            'title',
-            style: textTheme.bodyText1,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              hintText: 'title를 입력해주세요.',
-            ),
-            controller: titleController,
-            onChanged: (value){
-              setState(() {
-                postTitle = value;
-              });
-            },
-          ),
-          SizedBox(height: 30),
-          Text(
-            'content',
-            style: textTheme.bodyText1,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(vertical: 80.0),
-              border: OutlineInputBorder(),
-              hintText: '   content를 입력해주세요.',
-            ),
-            controller: contentController,
-            onChanged: (value){
-              setState(() {
-                postContent = value;
-              });
-            },
-          ),
-          SizedBox(height: 40),
-          Text(
-            'picture',
-            style: textTheme.bodyText1,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add_a_photo),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
-
