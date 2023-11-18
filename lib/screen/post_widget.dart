@@ -7,15 +7,16 @@ class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
 
   Widget _header() {
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Row(
         children: [
           AvatarWidget(
             type: AvatarType.TYPE2,
-            nickname: 'Yamada ryo',
+            nickname: 'han_ul_hong',
             size: 45,
-          )
+          ),
         ],
       ),
     );
@@ -23,7 +24,7 @@ class PostWidget extends StatelessWidget {
 
   Widget _image() {
     return Container(
-      child: Image.asset('assets/img/band.jpeg'),
+      child: Image.asset('assets/img/codeing.png'),
     );
   }
 

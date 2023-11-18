@@ -143,7 +143,7 @@ class _ProfilePart extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        "Yamada Ryo",
+                        "Hong_han_ul",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 25.0,
@@ -154,11 +154,11 @@ class _ProfilePart extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              '#Category1',
+                              '#It',
                             ),
                             SizedBox(width: 4.0),
                             Text(
-                              '#Category2',
+                              '#개발',
                             ),
                           ],
                         ),
@@ -177,7 +177,7 @@ class _ProfilePart extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '결속밴드 베이시스트',
+                        '컴퓨터정보통신공학부 3학년',
                         style: TextStyle(
                           color: Colors.white,
                         ),
