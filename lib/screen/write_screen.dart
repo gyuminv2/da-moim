@@ -114,13 +114,13 @@ class _WriteScreenState extends State<WriteScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FutureBuilder<List<Board>>(
-                  future: GetIt.I<LocalDatabase>().getAllBoards(),
-                  builder: (context, snapshot) {
-                    print(snapshot.data);
-                    return Text('hi');
-                  },
-                ),
+                // FutureBuilder<List<Board>>(
+                //   future: GetIt.I<LocalDatabase>().getAllBoards(),
+                //   builder: (context, snapshot) {
+                //     print(snapshot.data);
+                //     return Text('hi');
+                //   },
+                // ),
                 _RealBodyPart(),
               ],
             ),
