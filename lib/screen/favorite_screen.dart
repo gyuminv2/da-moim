@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:damoim/screen/write_screen.dart';
 import 'package:damoim/screen/home_screen.dart';
 import 'package:damoim/screen/profile_screen.dart';
+import 'package:damoim/screen/Message_view.dart';
 import 'package:damoim/screen/avatar_widget.dart';
 import 'package:damoim/screen/post_widget.dart';
 
@@ -32,7 +33,7 @@ class _FavoriteScreenState extends State<FavoriteScreen>
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FavoriteScreen(),
+            builder: (context) => MessageScreen(),
           ),
         );
       }
@@ -139,49 +140,75 @@ class _ProfilePart extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Text("개임 게발"),
+                  child: Text("개임 게발",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                    ),),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                   ),
                 ),
                 SizedBox(width: 10),
                 TextButton(
                   onPressed: () {},
-                  child: Text("기술 지원"),
+                  child: Text("기술 지원",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                    ),),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                   ),
                 ),
                 SizedBox(width: 10),
                 TextButton(
                   onPressed: () {},
-                  child: Text("데이타 분석"),
+                  child: Text("데이타 분석",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                    ),),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                   ),
                 ),
                 SizedBox(width: 10),
                 TextButton(
                   onPressed: () {},
-                  child: Text("웹 개발"),
+                  child: Text("웹 개발",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                    ),),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                   ),
                 ),
                 SizedBox(width: 10),
                 TextButton(
                   onPressed: () {},
-                  child: Text("클라우드"),
+                  child: Text("클라우드",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                   ),
                 ),
                 SizedBox(width: 10),
                 TextButton(
                   onPressed: () {},
-                  child: Text("스프링"),
+                  child: Text("스프링",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                  ),
+                  ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                   ),
                 ),
               ],

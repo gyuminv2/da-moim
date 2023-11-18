@@ -32,10 +32,10 @@ class _ITState extends State<IT> {
       appBar: AppBar(
         title: Text(
           'IT개발, 데이타',
-          style: TextStyle(color: Color(0xFF265AA5)),
+          style: TextStyle(color: Colors.white),
         ),
         elevation: 0.0,
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF265AA5),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -63,49 +63,73 @@ class _ITState extends State<IT> {
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child: Text("게임 개발"),
+                    child: Text("게임 개발",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("기술 지원"),
+                    child: Text("기술 지원",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("데이터 분석"),
+                    child: Text("데이터 분석",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("웹 개발"),
+                    child: Text("웹 개발",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("클라우드 개발"),
+                    child: Text("클라우드 개발",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("스프링"),
+                    child: Text("스프링",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                 ],

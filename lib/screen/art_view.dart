@@ -32,10 +32,10 @@ class _ArtState extends State<Art> {
       appBar: AppBar(
         title: Text(
           '예술',
-          style: TextStyle(color: Color(0xFF265AA5)),
+          style: TextStyle(color: Colors.white),
         ),
         elevation: 0.0,
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF265AA5),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -63,49 +63,73 @@ class _ArtState extends State<Art> {
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child: Text("서양화"),
+                    child: Text("서양화",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("동양화"),
+                    child: Text("동양화",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("무용"),
+                    child: Text("무용",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("풍경화"),
+                    child: Text("풍경화",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("인물화"),
+                    child: Text("인물화",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("케리 커쳐"),
+                    child: Text("케리 커쳐",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                 ],

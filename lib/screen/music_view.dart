@@ -32,10 +32,10 @@ class _MusicState extends State<Music> {
       appBar: AppBar(
         title: Text(
           '음악',
-          style: TextStyle(color: Color(0xFF265AA5)),
+          style: TextStyle(color: Colors.white),
         ),
         elevation: 0.0,
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF265AA5),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -63,49 +63,73 @@ class _MusicState extends State<Music> {
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child: Text("k-pop"),
+                    child: Text("k-pop",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("pop"),
+                    child: Text("밴드",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("랩"),
+                    child: Text("랩",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("외힙"),
+                    child: Text("외국힙합",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("풍악"),
+                    child: Text("전통음악",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("클래식"),
+                    child: Text("클래식",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF265AA5)),
                     ),
                   ),
                 ],
