@@ -448,13 +448,19 @@ class $CategoriesTable extends Categories
       requiredDuringInsert: false,
       defaultConstraints:
           GeneratedColumn.constraintIsAlways('PRIMARY KEY AUTOINCREMENT'));
-  static const VerificationMeta _titleMeta = const VerificationMeta('title');
+  static const VerificationMeta _userIdMeta = const VerificationMeta('userId');
   @override
-  late final GeneratedColumn<String> title = GeneratedColumn<String>(
-      'title', aliasedName, false,
-      type: DriftSqlType.string, requiredDuringInsert: true);
+  late final GeneratedColumn<int> userId = GeneratedColumn<int>(
+      'user_id', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  static const VerificationMeta _boardIdMeta =
+      const VerificationMeta('boardId');
   @override
-  List<GeneratedColumn> get $columns => [id, title];
+  late final GeneratedColumn<int> boardId = GeneratedColumn<int>(
+      'board_id', aliasedName, false,
+      type: DriftSqlType.int, requiredDuringInsert: true);
+  @override
+  List<GeneratedColumn> get $columns => [id, userId, boardId];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -468,11 +474,17 @@ class $CategoriesTable extends Categories
     if (data.containsKey('id')) {
       context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
     }
-    if (data.containsKey('title')) {
-      context.handle(
-          _titleMeta, title.isAcceptableOrUnknown(data['title']!, _titleMeta));
+    if (data.containsKey('user_id')) {
+      context.handle(_userIdMeta,
+          userId.isAcceptableOrUnknown(data['user_id']!, _userIdMeta));
     } else if (isInserting) {
-      context.missing(_titleMeta);
+      context.missing(_userIdMeta);
+    }
+    if (data.containsKey('board_id')) {
+      context.handle(_boardIdMeta,
+          boardId.isAcceptableOrUnknown(data['board_id']!, _boardIdMeta));
+    } else if (isInserting) {
+      context.missing(_boardIdMeta);
     }
     return context;
   }
@@ -485,8 +497,10 @@ class $CategoriesTable extends Categories
     return Categorie(
       id: attachedDatabase.typeMapping
           .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
-      title: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}title'])!,
+      userId: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}user_id'])!,
+      boardId: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}board_id'])!,
     );
   }
 
@@ -498,20 +512,24 @@ class $CategoriesTable extends Categories
 
 class Categorie extends DataClass implements Insertable<Categorie> {
   final int id;
-  final String title;
-  const Categorie({required this.id, required this.title});
+  final int userId;
+  final int boardId;
+  const Categorie(
+      {required this.id, required this.userId, required this.boardId});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['id'] = Variable<int>(id);
-    map['title'] = Variable<String>(title);
+    map['user_id'] = Variable<int>(userId);
+    map['board_id'] = Variable<int>(boardId);
     return map;
   }
 
   CategoriesCompanion toCompanion(bool nullToAbsent) {
     return CategoriesCompanion(
       id: Value(id),
-      title: Value(title),
+      userId: Value(userId),
+      boardId: Value(boardId),
     );
   }
 
@@ -520,7 +538,8 @@ class Categorie extends DataClass implements Insertable<Categorie> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return Categorie(
       id: serializer.fromJson<int>(json['id']),
-      title: serializer.fromJson<String>(json['title']),
+      userId: serializer.fromJson<int>(json['userId']),
+      boardId: serializer.fromJson<int>(json['boardId']),
     );
   }
   @override
@@ -528,56 +547,70 @@ class Categorie extends DataClass implements Insertable<Categorie> {
     serializer ??= driftRuntimeOptions.defaultSerializer;
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
-      'title': serializer.toJson<String>(title),
+      'userId': serializer.toJson<int>(userId),
+      'boardId': serializer.toJson<int>(boardId),
     };
   }
 
-  Categorie copyWith({int? id, String? title}) => Categorie(
+  Categorie copyWith({int? id, int? userId, int? boardId}) => Categorie(
         id: id ?? this.id,
-        title: title ?? this.title,
+        userId: userId ?? this.userId,
+        boardId: boardId ?? this.boardId,
       );
   @override
   String toString() {
     return (StringBuffer('Categorie(')
           ..write('id: $id, ')
-          ..write('title: $title')
+          ..write('userId: $userId, ')
+          ..write('boardId: $boardId')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, title);
+  int get hashCode => Object.hash(id, userId, boardId);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is Categorie && other.id == this.id && other.title == this.title);
+      (other is Categorie &&
+          other.id == this.id &&
+          other.userId == this.userId &&
+          other.boardId == this.boardId);
 }
 
 class CategoriesCompanion extends UpdateCompanion<Categorie> {
   final Value<int> id;
-  final Value<String> title;
+  final Value<int> userId;
+  final Value<int> boardId;
   const CategoriesCompanion({
     this.id = const Value.absent(),
-    this.title = const Value.absent(),
+    this.userId = const Value.absent(),
+    this.boardId = const Value.absent(),
   });
   CategoriesCompanion.insert({
     this.id = const Value.absent(),
-    required String title,
-  }) : title = Value(title);
+    required int userId,
+    required int boardId,
+  })  : userId = Value(userId),
+        boardId = Value(boardId);
   static Insertable<Categorie> custom({
     Expression<int>? id,
-    Expression<String>? title,
+    Expression<int>? userId,
+    Expression<int>? boardId,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
-      if (title != null) 'title': title,
+      if (userId != null) 'user_id': userId,
+      if (boardId != null) 'board_id': boardId,
     });
   }
 
-  CategoriesCompanion copyWith({Value<int>? id, Value<String>? title}) {
+  CategoriesCompanion copyWith(
+      {Value<int>? id, Value<int>? userId, Value<int>? boardId}) {
     return CategoriesCompanion(
       id: id ?? this.id,
-      title: title ?? this.title,
+      userId: userId ?? this.userId,
+      boardId: boardId ?? this.boardId,
     );
   }
 
@@ -587,8 +620,11 @@ class CategoriesCompanion extends UpdateCompanion<Categorie> {
     if (id.present) {
       map['id'] = Variable<int>(id.value);
     }
-    if (title.present) {
-      map['title'] = Variable<String>(title.value);
+    if (userId.present) {
+      map['user_id'] = Variable<int>(userId.value);
+    }
+    if (boardId.present) {
+      map['board_id'] = Variable<int>(boardId.value);
     }
     return map;
   }
@@ -597,7 +633,8 @@ class CategoriesCompanion extends UpdateCompanion<Categorie> {
   String toString() {
     return (StringBuffer('CategoriesCompanion(')
           ..write('id: $id, ')
-          ..write('title: $title')
+          ..write('userId: $userId, ')
+          ..write('boardId: $boardId')
           ..write(')'))
         .toString();
   }

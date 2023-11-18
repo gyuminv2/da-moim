@@ -2,16 +2,24 @@ import 'package:damoim/database/drift_database.dart';
 import 'package:damoim/screen/home_screen.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
-const DEFAULT_BOARDS_NAME = ['정글의 법칙', '신서유기', 'SBS', '복면가왕'];
+const DEFAULT_BOARDS_NAME = [
+  'flutter 파해치기',
+  'git 알아보기',
+  'docker 딥다이브',
+  'backend 어려워'
+];
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final database = LocalDatabase();
 
+  GetIt.I.registerSingleton<LocalDatabase>(database);
+
   print('------GET------');
-  final names = await database.getBoardTitles();
+  final names = await database.getAllBoards();
 
   if (names.isEmpty) {
     for (String str in DEFAULT_BOARDS_NAME) {
@@ -31,6 +39,7 @@ void main() async {
   }
 
   print(await database.getBoardTitles());
+  print(await database.getAllBoards());
 
   runApp(
     MaterialApp(
@@ -46,4 +55,3 @@ void main() async {
     ),
   );
 }
-

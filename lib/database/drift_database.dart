@@ -27,12 +27,14 @@ class LocalDatabase extends _$LocalDatabase {
 
   Future<int> createUser(UsersCompanion data) => into(users).insert(data);
 
-  Future<int> createCategoly(CategoriesCompanion data) =>
+  Future<int> createCategory(CategoriesCompanion data) =>
       into(categories).insert(data);
 
   // Select
   Future<List<String>> getBoardTitles() =>
       select(boards).map((board) => board.title).get();
+
+  Future<List<Board>> getAllBoards() => select(boards).get();
 
   @override
   int get schemaVersion => 1;
