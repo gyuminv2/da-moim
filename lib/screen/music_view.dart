@@ -61,7 +61,53 @@ class _MusicState extends State<Music> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  // ... rest of your code
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("k-pop"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("pop"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("랩"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("외힙"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("풍악"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("클래식"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
                 ],
               ),
             ),

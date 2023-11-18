@@ -61,7 +61,53 @@ class _DesignState extends State<Design> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  // ... rest of your code
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("가구 디자인"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("건축 디자인"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("게임 디자인"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("시각 디자인"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("환경 디자인"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("산업 디자인"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
                 ],
               ),
             ),

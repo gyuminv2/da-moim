@@ -48,7 +48,53 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  // ... rest of your code
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("게임 개발"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("기술 지원"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("데이터 분석"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("웹 개발"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("클라우드 개발"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("스프링"),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                    ),
+                  ),
                 ],
               ),
             ),
