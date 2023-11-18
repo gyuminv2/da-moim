@@ -84,7 +84,8 @@ class _WriteScreenState extends State<WriteScreen>
           elevation: 0,
         ),
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
+      child: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -94,6 +95,7 @@ class _WriteScreenState extends State<WriteScreen>
             ],
           ),
         ),
+      )
       ),
 
         bottomNavigationBar: BottomNavigationBar(
