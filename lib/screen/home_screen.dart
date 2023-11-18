@@ -1,6 +1,7 @@
 import 'package:damoim/screen/avatar_widget.dart';
 import 'package:damoim/screen/favorite_screen.dart';
 import 'package:damoim/screen/post_widget.dart';
+import 'package:damoim/screen/write_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -72,7 +73,6 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final result;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF265AA5),
@@ -128,6 +128,18 @@ class _HomeScreenState extends State<HomeScreen>
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final result = await Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => WriteScreen(),
+            ),
+          );
+        },
+        child: Icon(
+          Icons.edit,
+        ),
       ),
     );
   }

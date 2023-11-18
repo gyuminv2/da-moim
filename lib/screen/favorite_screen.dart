@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:damoim/screen/avatar_widget.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'favorite',
-      home: FavoriteScreen(),
-    );
-  }
-}
-
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
   @override
