@@ -154,11 +154,11 @@ class _ProfilePart extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              '#밴드',
+                              '#It',
                             ),
                             SizedBox(width: 4.0),
                             Text(
-                              '#음악',
+                              '#개발',
                             ),
                           ],
                         ),
@@ -177,7 +177,7 @@ class _ProfilePart extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '결속밴드 베이시스트',
+                        '컴퓨터정보통신공학부 3학년',
                         style: TextStyle(
                           color: Colors.white,
                         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-enum AvatarType { TYPE1, TYPE2, TYPE3, TYPE4, TYPE5, TYPE6, TYPE7 }
+enum AvatarType { TYPE1, TYPE2, TYPE3, TYPE4, TYPE5, TYPE6, TYPE7}
 
 class AvatarWidget extends StatelessWidget {
   bool? hasStory;
@@ -30,7 +30,7 @@ class AvatarWidget extends StatelessWidget {
             width: size,
             height: size,
             //image 변경()
-            child: Image.asset('assets/img/ryo.jpeg'),
+            child: Image.asset('assets/img/hong.jpeg'),
           )),
     );
   }
@@ -202,6 +202,7 @@ class AvatarWidget extends StatelessWidget {
 
       case AvatarType.TYPE7:
         return type7Widget();
+
     }
   }
 }
