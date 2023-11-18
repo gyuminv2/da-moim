@@ -1,28 +1,19 @@
 import 'package:damoim/screen/favorite_screen.dart';
 import 'package:damoim/screen/home_screen.dart';
+import'package:damoim/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class WriteScreen extends StatefulWidget {
   const WriteScreen({super.key});
-
   @override
   State<WriteScreen> createState() => _WriteScreenState();
 }
-
 class _WriteScreenState extends State<WriteScreen>
     with SingleTickerProviderStateMixin {
   int _selectedIndex = 3;
   late TabController _tabController;
-
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
-  final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    FavoriteScreen(),
-    // MessageScreen(),
-    // ProfileScreen(),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -56,7 +47,7 @@ class _WriteScreenState extends State<WriteScreen>
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FavoriteScreen(),
+            builder: (context) => ProfileScreen(),
           ),
         );
       }
@@ -70,13 +61,11 @@ class _WriteScreenState extends State<WriteScreen>
     _tabController.addListener(
         () => setState(() => _selectedIndex = _tabController.index));
   }
-
   @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,17 +84,14 @@ class _WriteScreenState extends State<WriteScreen>
           elevation: 0,
         ),
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _BodyPart(),
-                // 추가적인 위젯들을 여기에 추가할 수 있습니다.
-              ],
-            ),
+      body: SafeArea(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _RealBodyPart(),
+            ],
           ),
         ),
       ),
@@ -138,8 +124,23 @@ class _WriteScreenState extends State<WriteScreen>
   }
 }
 
-class _BodyPart extends StatelessWidget {
-  const _BodyPart({super.key});
+
+class _RealBodyPart extends StatefulWidget {
+  const _RealBodyPart({super.key});
+
+  @override
+  State<_RealBodyPart> createState() => _RealBodyPartState();
+}
+
+class _RealBodyPartState extends State<_RealBodyPart> {
+
+  TextEditingController categoryController = TextEditingController();
+  TextEditingController titleController = TextEditingController();
+  TextEditingController contentController = TextEditingController();
+
+  String postCategory ="";
+  String postTitle ="";
+  String postContent ="";
 
   @override
   Widget build(BuildContext context) {
@@ -147,6 +148,7 @@ class _BodyPart extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     return Padding(
+
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,6 +162,12 @@ class _BodyPart extends StatelessWidget {
               border: UnderlineInputBorder(),
               hintText: 'Category를 입력해주세요.',
             ),
+            controller: categoryController,
+            onChanged: (value){
+              setState(() {
+                postCategory = value;
+              });
+            },
           ),
           SizedBox(height: 30),
           Text(
@@ -171,6 +179,12 @@ class _BodyPart extends StatelessWidget {
               border: UnderlineInputBorder(),
               hintText: 'title를 입력해주세요.',
             ),
+            controller: titleController,
+            onChanged: (value){
+              setState(() {
+                postTitle = value;
+              });
+            },
           ),
           SizedBox(height: 30),
           Text(
@@ -183,6 +197,12 @@ class _BodyPart extends StatelessWidget {
               border: OutlineInputBorder(),
               hintText: '   content를 입력해주세요.',
             ),
+            controller: contentController,
+            onChanged: (value){
+              setState(() {
+                postContent = value;
+              });
+            },
           ),
           SizedBox(height: 40),
           Text(
@@ -198,3 +218,4 @@ class _BodyPart extends StatelessWidget {
     );
   }
 }
+

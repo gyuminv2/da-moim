@@ -3,6 +3,7 @@ import 'package:damoim/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:damoim/screen/post_widget.dart';
 import 'package:damoim/screen/avatar_widget.dart';
+import 'package:damoim/screen/write_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -65,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF265AA5),
-        title: const Text("profile"),
+        title: const Text("마이 페이지"),
         elevation: 0,
       ),
       body: Container(
@@ -103,6 +104,18 @@ class _ProfileScreenState extends State<ProfileScreen>
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
         currentIndex: selectedIndex,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final result = await Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => WriteScreen(),
+            ),
+          );
+        },
+        child: Icon(
+          Icons.edit,
+        ),
       ),
     );
   }
