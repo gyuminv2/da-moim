@@ -32,10 +32,10 @@ class _DesignState extends State<Design> {
       appBar: AppBar(
         title: Text(
           '디자인',
-          style: TextStyle(color: Color(0xFF265AA5)),
+          style: TextStyle(color: Colors.white),
         ),
         elevation: 0.0,
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF265AA5),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -63,49 +63,73 @@ class _DesignState extends State<Design> {
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child: Text("가구 디자인"),
+                    child: Text("가구 디자인",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>( Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("건축 디자인"),
+                    child: Text("건축 디자인",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>( Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("게임 디자인"),
+                    child: Text("게임 디자인",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>( Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("시각 디자인"),
+                    child: Text("미디어 디자인",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>( Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("환경 디자인"),
+                    child: Text("환경 디자인",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>( Color(0xFF265AA5)),
                     ),
                   ),
                   SizedBox(width: 10),
                   TextButton(
                     onPressed: () {},
-                    child: Text("산업 디자인"),
+                    child: Text("산업 디자인",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                      backgroundColor: MaterialStateProperty.all<Color>( Color(0xFF265AA5)),
                     ),
                   ),
                 ],

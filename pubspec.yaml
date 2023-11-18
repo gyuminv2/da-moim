@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.2.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,6 +40,7 @@ dependencies:
   sqlite3_flutter_libs: ^0.5.0
   path_provider: ^2.0.0
   path: ^1.8.3
+  get_it: ^7.6.4
 
 
 dev_dependencies:
@@ -71,10 +73,10 @@ flutter:
   fonts:
     - family: sunflower
       fonts:
-        - asset: asset/font/Sunflower-Light.ttf
-        - asset: asset/font/Sunflower-Medium.ttf
+        - asset: assets/font/Sunflower-Light.ttf
+        - asset: assets/font/Sunflower-Medium.ttf
           weight: 500
-        - asset: asset/font/Sunflower-Bold.ttf
+        - asset: assets/font/Sunflower-Bold.ttf
           weight: 700
 
   # To add assets to your application, add an assets section, like this:
