@@ -126,7 +126,6 @@ class _WriteScreenState extends State<WriteScreen>
             ),
           ),
         ),
-      )
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
