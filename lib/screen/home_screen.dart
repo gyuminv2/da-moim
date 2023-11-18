@@ -290,7 +290,20 @@ class _MiddlePart extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         //_categoryList = 카테고리 목록
         //_postList = 게시글 목록
-        children: [_categoryList(context), const SizedBox(height: 15), _postList()],
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
+            child: Text('Category'),
+          ),
+          _categoryList(context),
+          // _categoryName(context),
+          const SizedBox(height: 15),
+          Padding(
+            padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
+            child: Text('Border'),
+          ),
+          _postList()
+        ],
       ),
     );
   }
@@ -309,50 +322,75 @@ Widget _categoryList(BuildContext context) {
     scrollDirection: Axis.horizontal,
     child: Row(
       children: [
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => IT(),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => IT(),
+                ),
+              ),
+              child: AvatarWidget(type: avatarTypes[0]),
             ),
-          ),
-          child: AvatarWidget(type: avatarTypes[0]),
+            Text('IT'),
+          ],
         ),
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => Design(),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Design(),
+                ),
+              ),
+              child: AvatarWidget(type: avatarTypes[1]),
             ),
-          ),
-          child: AvatarWidget(type: avatarTypes[1]),
+            Text('Design'),
+          ],
         ),
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => Music(),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Music(),
+                ),
+              ),
+              child: AvatarWidget(type: avatarTypes[2]),
             ),
-          ),
-          child: AvatarWidget(type: avatarTypes[2]),
+            Text('Music'),
+          ],
         ),
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => Art(),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Art(),
+                ),
+              ),
+              child: AvatarWidget(type: avatarTypes[3]),
             ),
-          ),
-          child: AvatarWidget(type: avatarTypes[3]),
+            Text('Art'),
+          ],
         ),
-        GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => Study(),
+        Column(
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Study(),
+                ),
+              ),
+              child: AvatarWidget(type: avatarTypes[4]),
             ),
-          ),
-          child: AvatarWidget(type: avatarTypes[4]),
+            Text('Edu'),
+          ],
         ),
       ],
     ),
