@@ -9,6 +9,8 @@ import 'package:damoim/screen/write_screen.dart';
 import 'package:damoim/screen/study_view.dart';
 import 'package:flutter/material.dart';
 
+import 'Message_view.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -27,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen>
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     FavoriteScreen(),
-    // MessageScreen(),
+    MessageScreen(),
     // ProfileScreen(),
   ];
 
@@ -47,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen>
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FavoriteScreen(),
+            builder: (context) => MessageScreen(),
           ),
         );
       }
