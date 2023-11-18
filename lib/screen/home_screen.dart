@@ -1,6 +1,7 @@
 import 'package:damoim/screen/avatar_widget.dart';
 import 'package:damoim/screen/favorite_screen.dart';
 import 'package:damoim/screen/post_widget.dart';
+import 'package:damoim/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen>
     HomeScreen(),
     FavoriteScreen(),
     // MessageScreen(),
-    // ProfileScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -45,11 +46,12 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         );
       }
+
       if (_selectedIndex == 3) {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FavoriteScreen(),
+            builder: (context) => ProfileScreen(),
           ),
         );
       }
@@ -72,7 +74,6 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final result;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF265AA5),
@@ -125,36 +126,14 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        selectedItemColor: Color(0xFF265AA5),
+        unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),
     );
   }
 }
 
-class _TopPart extends StatelessWidget {
-  const _TopPart({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0xFF265AA5),
-      ),
-      child: Row(
-        children: [
-          SizedBox(width: 30.0),
-          Icon(Icons.star),
-          SizedBox(width: 250.0),
-          Icon(Icons.notifications),
-          SizedBox(width: 20.0),
-          Icon(Icons.login),
-        ],
-      ),
-    );
-  }
-}
 
 class _SearchPart extends StatelessWidget {
   const _SearchPart({super.key});
