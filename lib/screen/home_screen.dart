@@ -173,7 +173,7 @@ class _SearchPart extends StatelessWidget {
         child: Container(
           color: Color(0xFF265AA5),
           child: TextField(
-            obscureText: true,
+            obscureText: false,
             decoration: InputDecoration(
               filled: true, // 배경을 채우도록 설정
               fillColor: Color(0xFFFFFFFF), // 배경색 설정

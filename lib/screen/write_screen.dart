@@ -95,18 +95,22 @@ class _WriteScreenState extends State<WriteScreen>
           elevation: 0,
         ),
       ),
-      body: SafeArea(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _BodyPart(),
-            ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _BodyPart(),
+                // 추가적인 위젯들을 여기에 추가할 수 있습니다.
+              ],
+            ),
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+
+        bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
