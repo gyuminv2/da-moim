@@ -143,7 +143,7 @@ class _ProfilePart extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        "Yamada Ryo",
+                        "Hong_han_ul",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 25.0,
@@ -154,11 +154,11 @@ class _ProfilePart extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              '#Category1',
+                              '#밴드',
                             ),
                             SizedBox(width: 4.0),
                             Text(
-                              '#Category2',
+                              '#음악',
                             ),
                           ],
                         ),

@@ -7,6 +7,7 @@ class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
 
   Widget _header() {
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Row(

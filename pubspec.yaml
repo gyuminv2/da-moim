@@ -72,10 +72,10 @@ flutter:
   fonts:
     - family: sunflower
       fonts:
-        - asset: asset/font/Sunflower-Light.ttf
-        - asset: asset/font/Sunflower-Medium.ttf
+        - asset: assets/font/Sunflower-Light.ttf
+        - asset: assets/font/Sunflower-Medium.ttf
           weight: 500
-        - asset: asset/font/Sunflower-Bold.ttf
+        - asset: assets/font/Sunflower-Bold.ttf
           weight: 700
 
   # To add assets to your application, add an assets section, like this:
