@@ -158,6 +158,7 @@ class _TopPart extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Color(0xFF265AA5),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
         children: [
@@ -186,11 +187,15 @@ class _SearchPart extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(32.0),
         child: Container(
-          color: Color(0xFFFFFFFF),
+          color: Color(0xFF265AA5),
           child: TextField(
             obscureText: true,
             decoration: InputDecoration(
-              border: OutlineInputBorder(),
+              filled: true, // 배경을 채우도록 설정
+              fillColor: Color(0xFFFFFFFF), // 배경색 설정
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0), // 끝을 둥글게 깍아줍니다.
+              ),
               labelText: 'Search',
             ),
           ),
@@ -199,6 +204,7 @@ class _SearchPart extends StatelessWidget {
     );
   }
 }
+
 
 class _CategoryPart extends StatelessWidget {
   const _CategoryPart({super.key});
