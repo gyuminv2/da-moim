@@ -34,6 +34,14 @@ void main() async {
 
   runApp(
     MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'sunflower',
+        textTheme: TextTheme(
+          bodyText1: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
       home: HomeScreen(),
     ),
   );

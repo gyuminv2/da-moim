@@ -84,12 +84,15 @@ class _HomeScreenState extends State<HomeScreen>
         leadingWidth: 90.0,
         leading: Image.asset('assets/img/damo.png'),
         actions: [
-          Icon(
-            Icons.notifications,
-            color: Colors.white,
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications),
           ),
           SizedBox(width: 10.0),
-          Icon(Icons.login, color: Colors.white),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.login),
+          ),
           SizedBox(width: 10.0),
         ],
         elevation: 0,
@@ -205,7 +208,6 @@ class _SearchPart extends StatelessWidget {
   }
 }
 
-
 class _CategoryPart extends StatelessWidget {
   const _CategoryPart({super.key});
 
@@ -290,6 +292,9 @@ class _MiddlePart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Expanded(
       child: ListView(
         //padding 옆
@@ -299,14 +304,20 @@ class _MiddlePart extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
-            child: Text('Category'),
+            child: Text(
+              'Category',
+              style: textTheme.bodyText1,
+            ),
           ),
           _categoryList(context),
           // _categoryName(context),
           const SizedBox(height: 15),
           Padding(
             padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
-            child: Text('Border'),
+            child: Text(
+              'Border',
+              style: textTheme.bodyText1,
+            ),
           ),
           _postList()
         ],

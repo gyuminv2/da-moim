@@ -139,6 +139,9 @@ class _BodyPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -146,6 +149,7 @@ class _BodyPart extends StatelessWidget {
         children: [
           Text(
             'Category',
+            style: textTheme.bodyText1,
           ),
           TextField(
             decoration: InputDecoration(
@@ -156,6 +160,7 @@ class _BodyPart extends StatelessWidget {
           SizedBox(height: 30),
           Text(
             'title',
+            style: textTheme.bodyText1,
           ),
           TextField(
             decoration: InputDecoration(
@@ -166,6 +171,7 @@ class _BodyPart extends StatelessWidget {
           SizedBox(height: 30),
           Text(
             'content',
+            style: textTheme.bodyText1,
           ),
           TextField(
             decoration: InputDecoration(
@@ -175,7 +181,10 @@ class _BodyPart extends StatelessWidget {
             ),
           ),
           SizedBox(height: 40),
-          Text('picture'),
+          Text(
+            'picture',
+            style: textTheme.bodyText1,
+          ),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.add_a_photo),
