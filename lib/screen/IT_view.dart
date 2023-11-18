@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:damoim/screen/avatar_widget.dart';
 
-class FavoriteScreen extends StatefulWidget {
-  const FavoriteScreen({Key? key}) : super(key: key);
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
   @override
-  State<FavoriteScreen> createState() => _FavoriteScreenState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'IT',
+      home: IT(),
+    );
+  }
 }
 
-class _FavoriteScreenState extends State<FavoriteScreen> {
+class IT extends StatefulWidget {
+  const IT({Key? key}) : super(key: key);
+  @override
+  State<IT> createState() => _ITState();
+}
+
+class _ITState extends State<IT> {
   final _valueList = ['인기순', '추천순', '가장 최근'];
   var selected = '인기순';
   TextEditingController controller = TextEditingController();
@@ -18,7 +31,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '좋아요',
+          'IT개발.데이타',
           style: TextStyle(color: Color(0xFF265AA5)),
         ),
         elevation: 0.0,
