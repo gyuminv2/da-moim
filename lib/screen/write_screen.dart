@@ -95,7 +95,8 @@ class _WriteScreenState extends State<WriteScreen>
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+
+        bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -143,6 +144,9 @@ class _RealBodyPartState extends State<_RealBodyPart> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Padding(
 
       padding: const EdgeInsets.all(16.0),
@@ -151,6 +155,7 @@ class _RealBodyPartState extends State<_RealBodyPart> {
         children: [
           Text(
             'Category',
+            style: textTheme.bodyText1,
           ),
           TextField(
             decoration: InputDecoration(
@@ -167,6 +172,7 @@ class _RealBodyPartState extends State<_RealBodyPart> {
           SizedBox(height: 30),
           Text(
             'title',
+            style: textTheme.bodyText1,
           ),
           TextField(
             decoration: InputDecoration(
@@ -183,6 +189,7 @@ class _RealBodyPartState extends State<_RealBodyPart> {
           SizedBox(height: 30),
           Text(
             'content',
+            style: textTheme.bodyText1,
           ),
           TextField(
             decoration: InputDecoration(
@@ -198,7 +205,10 @@ class _RealBodyPartState extends State<_RealBodyPart> {
             },
           ),
           SizedBox(height: 40),
-          Text('picture'),
+          Text(
+            'picture',
+            style: textTheme.bodyText1,
+          ),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.add_a_photo),

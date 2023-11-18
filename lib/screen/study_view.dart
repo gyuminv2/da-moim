@@ -1,5 +1,5 @@
+import 'package:damoim/screen/post_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:damoim/screen/avatar_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +31,7 @@ class _StudyState extends State<Study> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '음악',
+          '교육',
           style: TextStyle(color: Color(0xFF265AA5)),
         ),
         elevation: 0.0,
@@ -68,7 +68,7 @@ class _StudyState extends State<Study> {
           ),
           Container(
             child: Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(0),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: DropdownButton(
@@ -89,6 +89,12 @@ class _StudyState extends State<Study> {
                   },
                 ),
               ),
+            ),
+          ),
+          Expanded( // Use Expanded to allow _postList to take remaining space
+            child: ListView(
+              // Use ListView instead of Column for dynamic scrolling
+              children: List.generate(5, (index) => PostWidget()).toList(),
             ),
           ),
         ],

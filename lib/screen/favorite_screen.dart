@@ -1,9 +1,11 @@
+import 'package:damoim/screen/post_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:damoim/screen/write_screen.dart';
 import 'package:damoim/screen/home_screen.dart';
 import 'package:damoim/screen/profile_screen.dart';
 import 'package:damoim/screen/avatar_widget.dart';
 import 'package:damoim/screen/post_widget.dart';
+
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
   @override

@@ -10,6 +10,8 @@ import 'package:damoim/screen/write_screen.dart';
 import 'package:damoim/screen/study_view.dart';
 import 'package:flutter/material.dart';
 
+import 'Message_view.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -28,7 +30,8 @@ class _HomeScreenState extends State<HomeScreen>
   final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     FavoriteScreen(),
-    // MessageScreen(),
+    MessageScreen(),
+    // ProfileScreen(),
     ProfileScreen(),
   ];
 
@@ -48,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen>
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FavoriteScreen(),
+            builder: (context) => MessageScreen(),
           ),
         );
       }
@@ -86,12 +89,15 @@ class _HomeScreenState extends State<HomeScreen>
         leadingWidth: 90.0,
         leading: Image.asset('assets/img/damo.png'),
         actions: [
-          Icon(
-            Icons.notifications,
-            color: Colors.white,
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notifications),
           ),
           SizedBox(width: 10.0),
-          Icon(Icons.login, color: Colors.white),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.login),
+          ),
           SizedBox(width: 10.0),
         ],
         elevation: 0,
@@ -167,7 +173,7 @@ class _SearchPart extends StatelessWidget {
         child: Container(
           color: Color(0xFF265AA5),
           child: TextField(
-            obscureText: true,
+            obscureText: false,
             decoration: InputDecoration(
               filled: true,
               fillColor: Color(0xFFFFFFFF),
@@ -182,9 +188,6 @@ class _SearchPart extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class _BodyPart extends StatelessWidget {
   const _BodyPart({super.key});
@@ -201,13 +204,14 @@ class _BodyPart extends StatelessWidget {
   }
 }
 
-
-
 class _MiddlePart extends StatelessWidget {
   const _MiddlePart({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+
     return Expanded(
       child: ListView(
         //padding 옆
@@ -217,14 +221,20 @@ class _MiddlePart extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
-            child: Text('Category'),
+            child: Text(
+              'Category',
+              style: textTheme.bodyText1,
+            ),
           ),
           _categoryList(context),
           // _categoryName(context),
           const SizedBox(height: 15),
           Padding(
             padding: EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
-            child: Text('Border'),
+            child: Text(
+              'Border',
+              style: textTheme.bodyText1,
+            ),
           ),
           _postList()
         ],
