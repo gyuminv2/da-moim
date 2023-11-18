@@ -5,6 +5,7 @@ import 'package:damoim/screen/design_view.dart';
 import 'package:damoim/screen/music_view.dart';
 import 'package:damoim/screen/favorite_screen.dart';
 import 'package:damoim/screen/post_widget.dart';
+import 'package:damoim/screen/profile_screen.dart';
 import 'package:damoim/screen/write_screen.dart';
 import 'package:damoim/screen/study_view.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen>
     FavoriteScreen(),
     MessageScreen(),
     // ProfileScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -53,11 +55,12 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         );
       }
+
       if (_selectedIndex == 3) {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FavoriteScreen(),
+            builder: (context) => ProfileScreen(),
           ),
         );
       }
@@ -132,8 +135,8 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        selectedItemColor: Color(0xFF265AA5),
+        unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),
       floatingActionButton: FloatingActionButton(
@@ -147,30 +150,6 @@ class _HomeScreenState extends State<HomeScreen>
         child: Icon(
           Icons.edit,
         ),
-      ),
-    );
-  }
-}
-
-class _TopPart extends StatelessWidget {
-  const _TopPart({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0xFF265AA5),
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Row(
-        children: [
-          SizedBox(width: 30.0),
-          Icon(Icons.star),
-          SizedBox(width: 250.0),
-          Icon(Icons.notifications),
-          SizedBox(width: 20.0),
-          Icon(Icons.login),
-        ],
       ),
     );
   }
@@ -206,7 +185,6 @@ class _SearchPart extends StatelessWidget {
     );
   }
 }
-
 
 class _CategoryPart extends StatelessWidget {
   const _CategoryPart({super.key});
