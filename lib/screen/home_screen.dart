@@ -116,19 +116,19 @@ class _HomeScreenState extends State<HomeScreen>
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '홈',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Favorite',
+            label: '좋아요',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
-            label: 'Message',
+            label: '채팅',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: '마이페이지',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -169,10 +169,10 @@ class _SearchPart extends StatelessWidget {
           child: TextField(
             obscureText: true,
             decoration: InputDecoration(
-              filled: true, // 배경을 채우도록 설정
-              fillColor: Color(0xFFFFFFFF), // 배경색 설정
+              filled: true,
+              fillColor: Color(0xFFFFFFFF),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0), // 끝을 둥글게 깍아줍니다.
+                borderRadius: BorderRadius.circular(10.0),
               ),
               labelText: 'Search',
             ),
@@ -184,37 +184,7 @@ class _SearchPart extends StatelessWidget {
 }
 
 
-class _CategoryPart extends StatelessWidget {
-  const _CategoryPart({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Category'),
-          SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Text('hi'),
-                SizedBox(width: 30),
-                Text('hi'),
-                SizedBox(width: 30),
-                Text('hi'),
-                SizedBox(width: 30),
-                Text('hi'),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
 
 class _BodyPart extends StatelessWidget {
   const _BodyPart({super.key});
@@ -231,37 +201,7 @@ class _BodyPart extends StatelessWidget {
   }
 }
 
-class _BottomPart extends StatelessWidget {
-  const _BottomPart({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.home),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.message),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.person),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class _MiddlePart extends StatelessWidget {
   const _MiddlePart({super.key});
