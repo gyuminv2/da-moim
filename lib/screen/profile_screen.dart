@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:damoim/screen/post_widget.dart';
 import 'package:damoim/screen/avatar_widget.dart';
 import 'package:damoim/screen/write_screen.dart';
+import 'package:damoim/screen/Message_view.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -41,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen>
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProfileScreen(),
+            builder: (context) => MessageScreen(),
           ),
         );
       }
