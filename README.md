@@ -28,7 +28,7 @@ A new Flutter project.
 
 ## 개발 기술
 - Android Studio
-- flutter
+- Flutter
 - SQLite
 
 ## Getting Started
