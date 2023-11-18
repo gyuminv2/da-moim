@@ -128,22 +128,68 @@ class _ProfilePart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF265AA5),
+        color: Colors.white,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
-          color: Color(0xFF265AA5),
-          child: Column(
-            children: [
-              Row(
-                children: [
-          ],
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text("개임 게발"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                  ),
+                ),
+                SizedBox(width: 10),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("기술 지원"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                  ),
+                ),
+                SizedBox(width: 10),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("데이타 분석"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                  ),
+                ),
+                SizedBox(width: 10),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("웹 개발"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                  ),
+                ),
+                SizedBox(width: 10),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("클라우드"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                  ),
+                ),
+                SizedBox(width: 10),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("스프링"),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.cyanAccent),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
-        ],
-      ),
-    ),
-    ),);
+
+      ),);
   }
 }
 
