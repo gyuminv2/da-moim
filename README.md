@@ -39,6 +39,6 @@ A new Flutter project.
 
 1. git clone [ref]
 2. flutter upgrade
-3. flutter pub run build_runner build
+3. flutter pub run build_runner build || dart run build_runner build
 4. pubspec.yaml -> Pub get
 5. build
