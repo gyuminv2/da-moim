@@ -38,6 +38,7 @@ A new Flutter project.
 ## Getting Started
 
 1. git clone [ref]
-2. flutter pub run build_runner build
-3. pubspec.yaml -> Pub get
-4. build
+2. flutter upgrade
+3. flutter pub run build_runner build
+4. pubspec.yaml -> Pub get
+5. build
