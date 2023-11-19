@@ -31,6 +31,10 @@ A new Flutter project.
 - Flutter
 - SQLite
 
+## ERD
+![KakaoTalk_Photo_2023-11-19-16-45-56](https://github.com/gyuminv2/da-moim/assets/48640323/55571217-7505-4944-8a97-18421c719881)
+
+
 ## Getting Started
 
 1. git clone [ref]
